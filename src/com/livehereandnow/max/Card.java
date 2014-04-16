@@ -9,7 +9,7 @@ package com.livehereandnow.max;
  *
  * @author max
  */
-public class Card {
+public class Card implements CardType {
 
     int 編號;
     int 加權值;
@@ -28,7 +28,8 @@ public class Card {
         this.時代 = 時代;
         this.類型 = 類型;
     }
-        public Card(int 編號, String 卡名, int 時代, int 類型,int 加權值) {
+
+    public Card(int 編號, String 卡名, int 時代, int 類型, int 加權值) {
         this.編號 = 編號;
         this.卡名 = 卡名;
         this.時代 = 時代;
@@ -67,6 +68,16 @@ public class Card {
         return 類型;
     }
 
+    // ver 0.7, by Mark, 2014-4-16
+    public String get類型Name() {
+        return CardType.CARD_TYPE_NAME[類型];
+    }
+    
+    // ver 0.7, by Mark, 2014-4-16
+    public String get卡名and類型Name() {
+        return "[" + 卡名 + "-" + CardType.CARD_TYPE_NAME[類型] + "] ";
+    }
+
     public void set類型(int 類型) {
         this.類型 = 類型;
     }
@@ -78,7 +89,7 @@ public class Card {
 
     @Override
     public String toString() {
-        return 卡名+"("+加權值+")";
+        return 卡名 + "(" + 加權值 + ")";
     }
 
 }

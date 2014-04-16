@@ -30,6 +30,15 @@ public class Player {
     //2.事件獲得
     //3.侵略、戰爭獲得
     //4.黃牌獲得
+    private int 拿過的時代A領袖牌數;
+
+    public int get拿過的時代A領袖牌數() {
+        return 拿過的時代A領袖牌數;
+    }
+
+    public void set拿過的時代A領袖牌數(int 拿過的時代A領袖牌數) {
+        this.拿過的時代A領袖牌數 = 拿過的時代A領袖牌數;
+    }
     private int 資源;
     private int 科技;
 //政府的影響

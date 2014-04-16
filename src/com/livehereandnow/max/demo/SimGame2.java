@@ -23,9 +23,10 @@ public class SimGame2 {
         String cmd = "";
      //   int player=1;
         while (true) {
-            System.out.print("player"+ge.getPlayer()+" >> ");
+            System.out.print("player"+ge.get當前玩家()+" >> ");
             cmd = in.readLine();
-            System.out.println("system >>> " + cmd);
+//            System.out.println("system >>> " + cmd);
+            System.out.print("system >>> " );
             if (!ge.doCmd(cmd)) {
                 System.out.println("? unknown command\n\n");
                 System.out.println("    --- available commands: help, hint, change-turn, take-card ");

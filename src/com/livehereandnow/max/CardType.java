@@ -22,5 +22,6 @@ public interface CardType {
     int 侵略 = 8;
     int 戰爭 = 9;
     int 條約 = 10;
-
+    int EMPTY=11;
+    String[] CARD_TYPE_NAME={"政府","奇蹟","領袖","科技","黃牌","事件","殖民地","戰術","侵略","戰爭","條約","EMPTY"};
 }
