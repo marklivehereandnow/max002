@@ -175,7 +175,13 @@ public class GameEngine {
 
         switch (cleanCmd) {
             case "help": {
-                System.out.println("basic rules");
+                System.out.println("\n=== basic commands === (start)");
+                System.out.println("   help         this command");
+                System.out.println("   take-card X  take number X card, X is 0 base");
+                System.out.println("   change-turn  change player's turn");
+                System.out.println("   status       to show current game status");
+                System.out.println("=== basic commands === (end)");
+
                 return true;
             }
             case "hint": {
@@ -190,18 +196,23 @@ public class GameEngine {
                 return true;
             }
             case "version": {
-                System.out.println("=== ver 0.2 ===  2014-4-16, 08:30");
-                System.out.println("1. allow palyers to take-card");
-                System.out.println("2. design NOCARD when card was taken from CardRow");
-                System.out.println("3. show Player's on-hand cards");
-                
-              System.out.println();
-              
-                System.out.println("=== ver 0.1 ===  2014-4-15, 18:00");
-                System.out.println("1. allow 2 to 4 players to change-turn");
-                System.out.println("2. show CardRow with value 1,2 and 3");
-                
-                
+                System.out.println();
+                System.out.println("  === ver 0.2.1 ===  2014-4-16, 08:30");
+                System.out.println("    1. hide player 1 is going to 拿取 card#0");
+                System.out.println("    2. show player 1 拿取 [凱薩]");
+                System.out.println("    3. improve help command");
+                System.out.println();
+
+                System.out.println("  === ver 0.2 ===  2014-4-16, 08:00");
+                System.out.println("    1. allow palyers to take-card");
+                System.out.println("    2. design NOCARD when card was taken from CardRow");
+                System.out.println("    3. show Player's on-hand cards");
+                System.out.println();
+
+                System.out.println("  === ver 0.1 ===  2014-4-15, 18:00");
+                System.out.println("    1. allow 2 to 4 players to change-turn");
+                System.out.println("    2. show CardRow with value 1,2 and 3");
+
                 return true;
             }
             case "change-turn": {
@@ -216,8 +227,7 @@ public class GameEngine {
                     if (tokens.size() == 2) {
                         int cardNum = Integer.parseInt(tokens.get(1));
 
-                        System.out.println("player" + player + " is going to 拿取 card#" + cardNum);
-
+//                        System.out.println("player" + player + " is going to 拿取 card#" + cardNum);
                         switch (player) {
                             case 1:
                                 player1Cards.add(cardRow.get(cardNum));
@@ -234,7 +244,10 @@ public class GameEngine {
                             default:
                                 return false;
                         }
+                        System.out.println("player" + player + " 拿取 [" + cardRow.get(cardNum).get卡名() + "]");
+
                         cardRow.remove(cardNum);
+
                         cardRow.add(cardNum, NOCARD);
 
                         return true;
