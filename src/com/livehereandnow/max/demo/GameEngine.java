@@ -193,6 +193,11 @@ public class GameEngine {
         if (當前玩家 == playerCnt) {
             當前玩家 = 1;
             roundNum++;
+            p1.set內政點數(4);
+            p2.set內政點數(4);
+            p3.set內政點數(4);
+            p4.set內政點數(4);
+
         } else {
             當前玩家++;
         }
@@ -351,12 +356,17 @@ public class GameEngine {
     public void doVersion() {
 
         System.out.println();
+        
+        System.out.println("  === ver 0.8 ===  2014-4-16, 18:40, by Mark");
+        System.out.println("    1. 2nd round forward, set points 4 to each player");
+        System.out.println();
+
         System.out.println("  === ver 0.7 ===  2014-4-16, 18:00, by Mark");
         System.out.println("    1. fix 禁止讓玩家拿兩張A時代領袖");
         System.out.println("    2. enhance status layout, show card with typename");
         System.out.println("    3. enhance 4 player on first round taking cards");
         System.out.println();
-        
+
         System.out.println();
         System.out.println("  === ver 0.6 ===  2014-4-16, 12:42");
         System.out.println("    1. 禁止讓玩家拿兩張A時代領袖");
